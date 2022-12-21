@@ -43,21 +43,21 @@ console.log("i am copy");
       <div className='container' style={{color: props.mode==='dark'?'white':'black'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea className="form-control " style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'black'}} value={text} id="mybox" onChange={handleOnChange} rows="10"></textarea>
+          <textarea className="form-control " style={{backgroundColor: props.mode==='dark'?'#52a16e':'white', color: props.mode==='dark'?'white':'black'}} value={text} id="mybox" onChange={handleOnChange} rows="10"></textarea>
         </div>
-        <button className="btn btn-success mx-2" onClick={handleUpClick}>UPERCASE</button>
-        <button className="btn btn-success mx-2" onClick={handleLoClick}>Lowerase</button>
-        <button className="btn btn-success mx-2" onClick={handleCoClick}>Copy</button>
-        <button className="btn btn-success mx-2" onClick={handleClearClick}>Clear</button>
-        <button className="btn btn-success mx-2" onClick={handleExtraspace}>Extra Space</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleUpClick}>UPERCASE</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleLoClick}>Lowerase</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleCoClick}>Copy</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleClearClick}>Clear</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleExtraspace}>Extra Space</button>
         
       </div>
       <div className='container my-3' style={{color: props.mode==='dark'?'white':'black'}}>
-        <h2>your text sumary</h2>
-        <p>{text.split(" ").length}words and {text.length} charactes</p>
-        <p>{0.008 * text.split(" ").length} minutes read</p>
+        <h2>Your text sumary</h2>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Charactes</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h2>preview</h2>
-        <p>{text.length>0?text:"Enter someting to preview it here"}</p>
+        <p>{text.length>0?text:"Noting to preview "}</p>
       </div>
     </>
   )

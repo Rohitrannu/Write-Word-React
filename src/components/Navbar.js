@@ -25,7 +25,7 @@ export default function Navbar(props) {
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable to dark</label>
           </div>
           <form className="d-flex" role="search">
-            <input className="form-control me-2" style={{backgroundColor: props.mode==='dark'?'grey':'white'}} type="search" placeholder="Search" aria-label="Search" />
+            <input className="form-control me-2" style={{backgroundColor: props.mode==='dark'?'#52a16e':'white'}} type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
