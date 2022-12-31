@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About() {
+export default function Abouts() {
   return (
   <div className='container'> 
   <h1>About us</h1>
